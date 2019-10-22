@@ -52,8 +52,13 @@ describe('CHECKOUT', function(){
         let result = checkout(string)
         expect(result).toEqual(260)
     })
-    it('returns -1 if string is a number', function(){
-        let string = 'q'
+    it('returns -1 if string is a number 18', function(){
+        let string = '18'
+        let result = checkout(string)
+        expect(result).toEqual(-1)
+    })
+    it('returns -1 if string is -B8x', function(){
+        let string = '-B8x'
         let result = checkout(string)
         expect(result).toEqual(-1)
     })

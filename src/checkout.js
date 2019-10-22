@@ -1,6 +1,7 @@
 function checkout(string){
-    if (string.includes("A")|| string.includes("B") || string.includes("C") || string.includes("D")){
-
+    if (string.match(/[a-z1-9]/)) {
+        return -1
+    } else {
     let letters = {A:50, B:30, C:20, D:15}
     let score = []
     let array = string.split('')
@@ -29,5 +30,5 @@ function checkout(string){
     else {
         return finalScore -= ((countA/3*20) + (countB/2 * 15))
     }
-} else return -1 
+} 
 }
