@@ -1,11 +1,16 @@
 function checkout(string){
+    if (string.includes("A")|| string.includes("B") || string.includes("C") || string.includes("D")){
+
     let letters = {A:50, B:30, C:20, D:15}
     let score = []
     let array = string.split('')
     let countA = 0;
     let countB = 0;
+    let finalScore;
     array.forEach(function(item){ 
+        if(item == "A" || item == 'B'||item == 'C' || item == 'D'){
             score.push(letters[item])
+        }   
     })
     score.forEach(function(item){
         if(item === 50){
@@ -14,7 +19,8 @@ function checkout(string){
             countB++
         } 
     })
-    let finalScore = score.reduce(function(sum, num){
+
+    finalScore = score.reduce(function(sum, num){
         return sum+=num
     })
     if (countA % 3 != 0 || countB % 2 != 0 ) {
@@ -23,4 +29,5 @@ function checkout(string){
     else {
         return finalScore -= ((countA/3*20) + (countB/2 * 15))
     }
+} else return -1 
 }

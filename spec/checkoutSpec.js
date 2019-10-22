@@ -47,4 +47,14 @@ describe('CHECKOUT', function(){
          let result = checkout(string)
         expect(result).toEqual(45)
     })
+    it('returns 260 if string is AAAAAA', function(){
+        let string = 'AAAAAA'
+        let result = checkout(string)
+        expect(result).toEqual(260)
+    })
+    it('returns -1 if string is a number', function(){
+        let string = 'q'
+        let result = checkout(string)
+        expect(result).toEqual(-1)
+    })
 })
